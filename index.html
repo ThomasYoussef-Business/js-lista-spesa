@@ -23,8 +23,20 @@
     </header>
     <main>
         <div class="container mt-5">
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-md-10">
+                    <form class="row justify-content-between bg-light rounded g-3 p-3">
+                        <div class="col-12 col-md-10">
+                            <label for="inputSpesa" class="form-label">Nuovo oggetto</label>
+                            <input type="text" class="form-control" id="inputSpesa" aria-describedby="inputSpesaAiuto">
+                            <div id="inputSpesaAiuto" class="form-text">Inserisci un nuovo oggetto alla spesa</div>                        
+                        </div>
+                        <div class="col-12 col-md-2 d-md-flex justify-content-center align-items-center"><button type="button" class="btn btn-primary"><span class="material-symbols-rounded d-flex" onclick="aggiungiOggetto()">add</span></button></div>
+                    </form>
+                </div>
+            </div>
             <div class="row justify-content-center">
-                <div class="col-12 col-md-8 text-white fs-3">
+                <div class="col-12 col-md-10 text-white fs-3 px-0">
                     <ul class="list-group" id="contenitore-lista">
                     </ul>
                 </div>
