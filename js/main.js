@@ -1,4 +1,9 @@
 "use strict";
+/* --- Il problema da risolvere è quello di creare un sito che possa fare --- */
+/* --- da lista della spesa, dove l'utente può togliere e mettere elementi -- */
+/* ------------------------------ nella lista. ------------------------------ */
+
+
 /* ----------------------------- Variabili varie ---------------------------- */
 const listaSpesa = ["Pomodori", "Biscotti", "Nutella", "Pesche", "Banane"];
 const contenitoreOggetti = document.getElementById("contenitore-lista");
@@ -12,6 +17,7 @@ const inputOggettoNuovo = document.getElementById("inputSpesa");
  * }
  */
 
+// Questo loop aggiunge gli elementi già nella lista dentro all'HTML
 for (const oggettoDaComprare of listaSpesa) {
     console.log(`Devo prendere ${oggettoDaComprare}`);
     contenitoreOggetti.innerHTML += oggettoSpesaComponente(oggettoDaComprare);
@@ -42,9 +48,9 @@ function rimuoviDaSpesa(elemento) {
     }
 }
 
-inputOggettoNuovo.addEventListener("keypress", function(event) {
-    // Premere invio sull'input causa l'avvio di un evento inteso per i form,
-    // quindi lo intercetto per cambiarne il comportamento
+// Premere invio sull'input causa l'avvio di un evento inteso per i form,
+// quindi lo intercetto per cambiarne il comportamento
+inputOggettoNuovo.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
         aggiungiOggetto();
@@ -53,7 +59,7 @@ inputOggettoNuovo.addEventListener("keypress", function(event) {
 
 function prendiIndiceNodo(elemento) {
     // Soluzione un po' artigianale, non molto elegante ma funzionante
-    // TODO: Usare un oggetto per stare dietro agli elementi nella lista e
+    // TODO: Usare un Object per stare dietro agli elementi nella lista e
     // per rimuoverli 
     return Array.prototype.indexOf.call(elemento.parentNode.children, elemento)
 }
